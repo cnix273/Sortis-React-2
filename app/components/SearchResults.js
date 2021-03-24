@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import SearchForm from "./Pricing";
+import Pricing from "./Pricing";
 import ResultList from "./ResultList";
-import API from "../utils/API";
+import API from "./server/service/hubspot_constructor";
 
 class SearchResultContainer extends Component {
   state = {
@@ -10,35 +10,39 @@ class SearchResultContainer extends Component {
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
-  componentDidMount() {
-    this.searchGiphy("kittens");
-  }
+  // componentDidMount() {
+  //   this.searchGiphy("kittens");
+  // }
 
   //Api Call
-  searchGiphy = query => {
+  hubspotCall = query => {
     API.search(query)
       .then(res => this.setState({ results: res.data.data }))
       .catch(err => console.log(err));
   };
 
+  // handleInputChange = event => {
+  //   const name = event.target.name;
+  //   const value = event.target.value;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
   handleInputChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
+    this.setState({ search: event.target.value });
   };
 
   // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
+    this.hubspotCall(this.state.search);
   };
 
   render() {
     return (
       <div>
-        <SearchForm
+        <Pricing
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
