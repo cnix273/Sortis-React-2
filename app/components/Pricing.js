@@ -28,52 +28,30 @@ require('./Pricing.css');
 export default class Pricing extends Component {
     // classes = useStyles();
 
-    // state = {
-    //     searchName: '',
-    //     results: []
-    // }
-
     constructor(props) {
 		super(props);
 		this.state = {
 			searchName: "",
 			results: []
 		};
-
 	}
 
-
-    hubspotCall = contactData => {
+    hubspotCall = (searchParam) => {
         axios.post("/apis/contacts/search", {
-            searchName: this.state.searchName,
+            searchName: searchParam,
         }).then(function (data) {
-            console.log("data stuff", data.data);
-            if (data.duplicateUser) {
-                // Replace with Modal
-                alert("Sorry, that username has been taken");
-            } else if (data.data.success) {
-                console.log("yay!")
-                this.props.authenticate();
-                this.setState({
-                    redirectToReferrer: true
-                });
-            }
-        }.bind(this)).catch(function (err) {
+            console.log("API send successful", data);
+        }).catch(function (err) {
             console.log(err);
-        });
+        })
     }
-
 
     handleSubmit = event => {
         event.preventDefault();
         
-
-        // const searchParam = this.state.value;
+        const searchParam = this.state.searchName;
     
-        let contactData = {
-            name: searchParam
-        };
-    
+        this.hubspotCall(searchParam);
     }
 
     handleInputChange = event => {
@@ -84,25 +62,7 @@ export default class Pricing extends Component {
         this.setState({
             [name]: value
         })
-
-        console.log(this.state);
     
-        const searchParam = this.state.value;
-    
-        let contactData = {
-            name: searchParam
-        };
-
-    
-        // this.setState({
-        //     results: '',
-        //     username: '',
-        //     password: '',
-        //     passwordRepeat: '',
-        //     email: '',
-        //     emailRepeat: '',
-        //     redirectToReferrer: false
-        // });
     }
 
 
