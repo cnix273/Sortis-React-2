@@ -1,6 +1,7 @@
 const YOUR_HUBSPOT_API_KEY = "32583a2e-b128-4390-b87a-8e622366aa06";
 
 module.exports = (searchInput) => {
+    console.log(searchInput);
     let API = {
         method: 'POST',
         url: "https://api.hubapi.com/crm/v3/objects/contacts/search",
