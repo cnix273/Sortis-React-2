@@ -1,72 +1,58 @@
 const User       = require('../models/User');
 const passport = require("passport");
 const API = require('../service/hubspot_constructor');
+// const request = require('request');
 
 // login
 exports.contactSearch = (req, res) => {
 
-  // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-  // So we're sending the user back the route to the members page because the redirect will happen on the front end
-  // They won't get this or even be able to access this page if they aren't authed
-  console.log(res);
-  return passport.authenticate('local', (err, userData) => {
-    if (err) {
-      if (err.name === 'IncorrectCredentialsError') {
-        return res.status(400).json({
-          success: false,
-          message: err.message
-        });
-      }
 
-      return res.status(400).json({
-        success: false,
-        message: 'Could not process the form.'
-      });
+  const apiParam = JSON.stringify(req.body.searchName); 
+  console.log(apiParam);
+
+  const showMe = API(apiParam);
+
+  request(showMe, function(error, response, body) {
+    console.error('error:', error); // Print the error if one occurred
+    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    const investor = [];
+    // console.log(body.results);
+   
+    for (var i = 0; i<body.results.length; i++) {
+      investor.push(body.results[i].properties) 
     }
 
-  if (userData.message=="Invalid Password"||userData.message=="User not Found") {
-      return res.json({
-          success: false,
-          message: userData.message,
-          user: userData
-      })
-  }
-  else return res.json({
-      success: true,
-      message: 'You have successfully logged in!',
-      user: userData
-  });
-  })(req, res, next);
-};
+});
+}
 
-// register a user
-exports.contactSearch = (req, res) => {
+// // register a user
+// exports.contactSearch = (req, res) => {
   
-  User.findOne({ 'username' :  req.body.username }, function(err, user) {
+//   User.findOne({ 'username' :  req.body.username }, function(err, user) {
 
-    // check to see if theres already a user with that email
-    if (user) {
-        res.send({ duplicateUser: true })
-    } else {
+//     // check to see if theres already a user with that email
+//     if (user) {
+//         res.send({ duplicateUser: true })
+//     } else {
 
-        // if there is no user with that email
-        // create the user
-        console.log("new user", req.body);
-        const newUser       = new User();
+//         // if there is no user with that email
+//         // create the user
+//         console.log("new user", req.body);
+//         const newUser       = new User();
 
-        // set the user's local credentials
-        newUser.username    = req.body.username;
-        newUser.email       = req.body.email;
-        newUser.password    = newUser.generateHash(req.body.password);
+//         // set the user's local credentials
+//         newUser.username    = req.body.username;
+//         newUser.email       = req.body.email;
+//         newUser.password    = newUser.generateHash(req.body.password);
 
-        // save the user
-        newUser.save()
-          .then(function() {
-          res.send({ success: true });
-        }).catch(function(err) {
-          res.json(err);
-        });
-    }
+//         // save the user
+//         newUser.save()
+//           .then(function() {
+//           res.send({ success: true });
+//         }).catch(function(err) {
+//           res.json(err);
+//         });
+//     }
 
-  }); 
-};
+//   }); 
+// };

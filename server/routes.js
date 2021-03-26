@@ -11,6 +11,6 @@ module.exports = function(app){
 
 	app.use('/apis/users', users);
 	app.use('/apis/trips', trips);
-	app.use('apis/contacts', search)
+	app.use('/apis/contacts', search)
 	//other routes..
 }
