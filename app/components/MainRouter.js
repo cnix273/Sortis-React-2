@@ -7,7 +7,7 @@ import {
 import Main from "./Main";
 import Login from "./Login";
 import Signup from "./Signup";
-import Pricing from "./Pricing";
+import Search from "./Search";
 import axios from 'axios';
 
 export default class MainRouter extends Component {
@@ -72,8 +72,8 @@ export default class MainRouter extends Component {
               logout={this.logout}
             />} 
           />
-          <Route path="/pricing" render={props => 
-            <Pricing
+          <Route path="/search" render={props => 
+            <Search
               {...props}
               authenticate={this.authenticate}
               deAuthenticate={this.deAuthenticate}

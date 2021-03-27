@@ -25,7 +25,7 @@ export default class Nav extends Component {
                   </li>
                   
                   <li>
-                      <a className="page-scroll nav-left-text" href="/pricing"><p>PRICING</p></a>
+                      <a className="page-scroll nav-left-text" href="/search"><p>SEARCH</p></a>
                   </li>
                   <li>
                       <a className="page-scroll nav-left-text" href="/trips"><p>TRIPS</p></a>

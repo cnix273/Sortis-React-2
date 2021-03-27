@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 
-require('./Pricing.css');
+require('./Search.css');
 
 // const useStyles = makeStyles((theme) => ({
 //     root: {
@@ -25,7 +25,7 @@ require('./Pricing.css');
 //   }));
 
 
-export default class Pricing extends Component {
+export default class Search extends Component {
     // classes = useStyles();
 
     constructor(props) {
@@ -37,7 +37,7 @@ export default class Pricing extends Component {
 	}
 
     hubspotCall = (searchParam) => {
-        axios.post("/apis/contacts/search", {
+        axios.post("/apis/search/conntacts", {
             searchName: searchParam,
         }).then(data => {
             console.log("API send successful", data.data);
