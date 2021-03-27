@@ -45,4 +45,9 @@
 #card{
     background-color: grey;
   }
+
+.head {
+  border-right: 1px solid lightgray;
+  width: 118px;
+}
   
