@@ -6,11 +6,11 @@ module.exports = function(app){
 
 	const authCheckMiddleware = require('./config/middleware/authCheck');
 	app.use('/apis/trips', authCheckMiddleware);
-	app.use('/apis/contacts', authCheckMiddleware);
+	app.use('/apis/pricing', authCheckMiddleware);
 	app.use('/apis/search', authCheckMiddleware);
 
 	app.use('/apis/users', users);
 	app.use('/apis/trips', trips);
-	app.use('/apis/search', search)
+	app.use('/apis/contacts', search)
 	//other routes..
 }

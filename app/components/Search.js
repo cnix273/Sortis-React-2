@@ -37,7 +37,7 @@ export default class Search extends Component {
 	}
 
     hubspotCall = (searchParam) => {
-        axios.post("/apis/search/conntacts", {
+        axios.post("/apis/contacts/search", {
             searchName: searchParam,
         }).then(data => {
             console.log("API send successful", data.data);
