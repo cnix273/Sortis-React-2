@@ -9,6 +9,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Search from "./Search";
 import axios from 'axios';
+import MailingList from './Mailinglist'
 
 export default class MainRouter extends Component {
   constructor(props) {
@@ -74,6 +75,15 @@ export default class MainRouter extends Component {
           />
           <Route path="/search" render={props => 
             <Search
+              {...props}
+              authenticate={this.authenticate}
+              deAuthenticate={this.deAuthenticate}
+              authenticated={this.state.authenticated}
+              logout={this.logout}
+            />} 
+          />
+           <Route exact path="/mailinglist" render={props => 
+            <MailingList
               {...props}
               authenticate={this.authenticate}
               deAuthenticate={this.deAuthenticate}
