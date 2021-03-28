@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Auth from './utils/Auth';
 import Nav from './children/Nav'
+import Investors from './Mailinglist'
 
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,17 +13,6 @@ import Paper from '@material-ui/core/Paper';
 
 
 require('./Search.css');
-
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//       flexGrow: 1,
-//     },
-//     paper: {
-//       padding: theme.spacing(2),
-//       textAlign: 'center',
-//       color: theme.palette.text.secondary,
-//     },
-//   }));
 
 
 export default class Search extends Component {
@@ -44,6 +34,7 @@ export default class Search extends Component {
             this.setState({
                 results: data.data
             });
+            
         }).catch(err => {
             console.log(err);
         })
@@ -71,6 +62,7 @@ export default class Search extends Component {
 
 
     render() {
+        
     return (
         <div>
             <Nav
@@ -104,6 +96,7 @@ export default class Search extends Component {
                                 </form>
                             </Paper>
                         </Grid>
+                        {/* <Investors/> */}
                         {this.state.results.map((contact) => {
                             return(
                                 <Grid item xs={4}>
