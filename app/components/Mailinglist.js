@@ -23,21 +23,18 @@ export default class MailingList extends Component {
     constructor(props) {
 		super(props);
 		this.state = {
-			email: "",
-            firstname: "",
-            lastname: "",
+			EmailAddress: "",
+            FirstName: "",
+            LastName: "",
 			results: []
 		};
 	}
 
-    hubspotCall = (searchParam) => {
-        axios.post("/apis/contacts/search", {
-            searchName: searchParam,
+    addtoMailchimp = () => {
+        axios.post("/apis/mailinglist/newinvestor", {
+            members: this.state,
         }).then(data => {
             console.log("API send successful", data.data);
-            this.setState({
-                results: data.data
-            });
             
         }).catch(err => {
             console.log(err);
@@ -49,7 +46,7 @@ export default class MailingList extends Component {
         
         const searchParam = this.state.searchName;
     
-        this.hubspotCall(searchParam);
+        this.addtoMailchimp(searchParam);
 
     }
 
@@ -85,7 +82,7 @@ export default class MailingList extends Component {
                                         <h3>Sign up for Mailing List</h3>
                                         <input
                                             onChange={this.handleInputChange}
-                                            value={this.state.email}
+                                            value={this.state.EmailAddress}
                                             type="e-mail"
                                             name="searchName"
                                             className="form-control"
@@ -95,7 +92,7 @@ export default class MailingList extends Component {
                                         <br></br>
                                         <input
                                             onChange={this.handleInputChange}
-                                            value={this.state.firstname}
+                                            value={this.state.FirstName}
                                             type="text"
                                             name="searchName"
                                             className="form-control"
@@ -105,7 +102,7 @@ export default class MailingList extends Component {
                                         <br></br>
                                         <input
                                             onChange={this.handleInputChange}
-                                            value={this.state.lastname}
+                                            value={this.state.LastName}
                                             type="text"
                                             name="searchName"
                                             className="form-control"
