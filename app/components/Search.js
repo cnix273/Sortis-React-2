@@ -86,7 +86,7 @@ export default class Search extends Component {
                                             type="text"
                                             name="searchName"
                                             className="form-control"
-                                            placeholder="Any.."
+                                            placeholder="Name.."
                                             id="search-input">
                                         </input>
                                         <button type="submit" onClick={this.handleSubmit} className="btn btn-success">
@@ -100,8 +100,8 @@ export default class Search extends Component {
                         {this.state.results.map((contact) => {
                             return(
                                 <Grid item xs={4}>
-                                    <Paper>
-                                        <Card variant="outlined">
+                                    <Paper className="paper">
+                                        <Card variant="outlined" className="cards">
                                             <table className="table">
                                                 <tbody>
                                                     <tr>

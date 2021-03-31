@@ -78,7 +78,7 @@ export default class MailingList extends Component {
                         <Grid item xs={12}>
                             <Paper>
                                 <form>
-                                    <div className="form-group">
+                                    <div className="form-group mailinghead">
                                         <h3>Sign up for Mailing List</h3>
                                         <input
                                             onChange={this.handleInputChange}
