@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Pricing from "./Pricing";
+import Search from "./Search";
 import ResultList from "./ResultList";
 import API from "./server/service/hubspot_constructor";
 
@@ -42,7 +42,7 @@ class SearchResultContainer extends Component {
   render() {
     return (
       <div>
-        <Pricing
+        <Search
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}

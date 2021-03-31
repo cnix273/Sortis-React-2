@@ -1,27 +1,54 @@
-// Api call to hubspot
+const apiSetup = require('../service/hubspot_tools');
+const axios = require('axios');
 
-// Render search index
+// search Contacts route
+exports.contactSearch = (req, res) => {
 
-exports.index = function(req, res) {
-	Search
-  .find()
-  .where('UserId').equals(req.user.id)
-  .then(function(dbTrip) {
-    res.render('trips/trips', {
-		  layout: 'main-trips',
-		  trip: dbTrip
-	  });
-  });
-};
+  let pageLimit = 0;
+  let investor = [];
+  const queryParam = JSON.stringify(req.body.searchName); 
+  const queryInit = apiSetup.objBuild(queryParam, pageLimit);
 
-exports.createTrip = function(req, res) {
+  axios(queryInit).then((apiRes) => {
+    
+    // adds all of the "first" result objects
+    investor = apiSetup.saveResData(investor, apiRes);
 
-	// Add id from User onto req.body
-	req.body.UserId = req.user.id;
+    let numPages = Math.trunc(apiRes.data.total/100); 
 
-  var newTrip = new Trip(req.body);
+    // initial check if there are additional results
+    if (numPages !== 0) {
 
-  newTrip.save().then(function(dbPost) {
-    res.json(dbPost);
-  });
-};
+      for (let i=0; i < numPages; numPages--) {
+
+        pageLimit = pageLimit + 100;
+        const queryNext = apiSetup.objBuild(queryParam, pageLimit);
+
+        axios(queryNext).then((apiRes) => {
+          investor = apiSetup.saveResData(investor, apiRes);
+
+          console.log(`The Hubspot API returned `, investor.length, ` results :), congrats!`)
+          
+          // THIS IS WHERE YOU NEED TO SEND THE INVESTOR data BACK to the Client Side
+          // We Probably need to insert a res.json(investor) or res.send(investor) here
+          
+          res.json(investor);
+
+        })
+      }
+    } else {
+      // else will run if # of results returned is less than 100
+
+        // THIS IS WHERE YOU NEED TO SEND THE INVESTOR data BACK to the Client Side
+        // We Probably need to insert a res.json(investor) or res.send(investor) here
+
+        res.json(investor);
+
+      console.log(`The Hubspot API returned `, investor.length, ` results :), congrats!`)
+  
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+}

@@ -18,17 +18,18 @@ export default class Nav extends Component {
             <Link to={"/"} ><img className="icon-middle-nav-mobile" src={require("../../img/shapes/shape.png")} /></Link>
           </div>
 
-          <div className="collapse navbar-collapse navbar-left navbar-main-collapse">
+          {/* <div className="collapse navbar-collapse navbar-left navbar-main-collapse"> */}
+          <div className="collapse navbar-collapse navbar-right navbar-main-collapse1">
               <ul className="nav navbar-nav">
                   <li className="hidden">
                       <a href="#page-top"></a>
                   </li>
                   
                   <li>
-                      <a className="page-scroll nav-left-text" href="/pricing"><p>PRICING</p></a>
+                      <a className="page-scroll nav-left-text" href="/search"><p>SEARCH</p></a>
                   </li>
                   <li>
-                      <a className="page-scroll nav-left-text" href="/trips"><p>TRIPS</p></a>
+                      <a className="page-scroll nav-left-text" href="/mailinglist"><p>MAILING-LIST</p></a>
                   </li>
                   {this.props.authenticated ? (
                     <li>
@@ -41,7 +42,11 @@ export default class Nav extends Component {
                   )}
               </ul>
           </div>
+<<<<<<< HEAD
           {/*<div className="collapse navbar-collapse navbar-right navbar-main-collapse1">
+=======
+          {/* <div className="collapse navbar-collapse navbar-right navbar-main-collapse1">
+>>>>>>> f4e38cc8b4d70cb406e402cbfd6bd38e63a0b6fc
               <ul className="nav navbar-nav">
                   <li className="hidden">
                       <a href="#page-top"></a>
@@ -74,8 +79,13 @@ export default class Nav extends Component {
                       </a>
                   </li>
               </ul>
+<<<<<<< HEAD
                   </div>*/}
           
+=======
+          </div> */}
+          <Link to={"/"} ><img className="icon-middle-nav-desktop" src={require("../../img/shapes/shape.png")} /></Link>
+>>>>>>> f4e38cc8b4d70cb406e402cbfd6bd38e63a0b6fc
         </div>
       </nav>
     );
