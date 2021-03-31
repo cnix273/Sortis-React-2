@@ -28,19 +28,13 @@ export default class Main extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 col-md-offset-2">
-                            <h1 className="brand-heading">Be Prepared. TravelSafe.</h1>
-                            <h3 className="intro-text">Secure your travel experience.</h3>
-                            <ul className="positives_list">
-                                <p>Sign up for free and you get:</p>
-                                <p>Streaming updates on security status using a variety of different factors.</p>
-                                <p>Locations of active safe zones and hospitals, police etc.</p> 
-                                <p>Highly customized for each, specific region, using security data for the locations you'll be traveling to.</p>
-                            </ul>
-                            <a href="#about" className="btn btn-circle page-scroll">
+                            <h1 className="brand-heading">Sortis.</h1>
+                            <h3 className="intro-text">Consumer Relationship Management</h3>
+                            {/*<a href="#about" className="btn btn-circle page-scroll">
                                 <i className="fa down-arrow animated">
                                    <img className="down-arrow" src={require("../img/shapes/HomeDown.png")} alt="Down Arrow" />
                                 </i>
-                            </a>
+    </a>*/}
                         </div>
                     </div>
                 </div>
@@ -50,14 +44,13 @@ export default class Main extends Component {
         <section id="about" className="container content-section text-center">
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2">
-                    <h2>Hello Traveler</h2>
-                    <p>Beard vegan intelligentsia master cleanse bushwick mlkshk, vaporware dreamcatcher letterpress whatever art party hammock artisan roof party. Disrupt authentic 90's, green juice mlkshk palo santo kickstarter vexillologist post-ironic lyft biodiesel fam fingerstache pour-over. Jean shorts forage occupy fam tumblr. Air plant fanny pack yr, twee art party banjo squid flannel taxidermy. Selfies actually single-origin coffee twee vegan fashion axe hoodie venmo shoreditch before they sold out fanny pack lyft aesthetic. Leggings keytar literally hashtag, taxidermy pug thundercats palo santo asymmetrical XOXO flexitarian aesthetic meggings +1. Waistcoat semiotics biodiesel, bushwick etsy hot chicken vinyl craft beer VHS hashtag prism ugh literally knausgaard kitsch. Chartreuse mixtape post-ironic, drinking vinegar taiyaki fashion axe flexitarian poutine. Shabby chic air plant cred, skateboard pour-over whatever freegan portland keytar jean shorts beard 90's drinking vinegar williamsburg.</p>
-                    <button className="btn" >Get Started</button>
+                    <h2>LOG IN TO BEGIN</h2>
+                    {/*<button className="btn" >Get Started</button>*/}
                 </div>
             </div>
         </section>
 
-        <section id="user-comments" className="content-section text-center">
+        {/*<section id="user-comments" className="content-section text-center">
             <div className="user-feedback-section">
                 <div className="container">
                     <div className="col-lg-8 col-lg-offset-2">
@@ -85,7 +78,7 @@ export default class Main extends Component {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
 
         <footer>
             <div className="container text-center">
