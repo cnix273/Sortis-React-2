@@ -8,7 +8,7 @@ exports.sendNewMember = (req, res) => {
 
   axios(mailConstructor)
   .then((response) => {
-    console.log(JSON.stringify(response.data));
+    console.log(response.data);
 
     console.log(`Sucessfully added to Mailchimp Mailing Lust`, response.data, `  congrats!`)
   })
