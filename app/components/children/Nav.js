@@ -41,7 +41,7 @@ export default class Nav extends Component {
                   )}
               </ul>
           </div>
-          <div className="collapse navbar-collapse navbar-right navbar-main-collapse1">
+          {/*<div className="collapse navbar-collapse navbar-right navbar-main-collapse1">
               <ul className="nav navbar-nav">
                   <li className="hidden">
                       <a href="#page-top"></a>
@@ -74,8 +74,8 @@ export default class Nav extends Component {
                       </a>
                   </li>
               </ul>
-          </div>
-          <Link to={"/"} ><img className="icon-middle-nav-desktop" src={require("../../img/shapes/shape.png")} /></Link>
+                  </div>*/}
+          
         </div>
       </nav>
     );

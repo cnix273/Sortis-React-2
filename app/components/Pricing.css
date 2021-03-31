@@ -35,11 +35,11 @@
     font-size: 40px;
     color: #777777;
     padding: 20px;
-    margin: 0px;
+    margin: 10px;
   }
 
   li{
-    color: red
+    color: #2B5EC0
   }
 
 #card{

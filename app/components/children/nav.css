@@ -14,7 +14,7 @@
 
 .navbar-custom {
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.3);
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: black;
 }
@@ -48,12 +48,12 @@
 }
 
 .navbar-custom a {
-  color: rgb(57, 172, 233);
+  color: #2B5EC0;
 }
 .navbar-custom .nav li {
   border-top: solid 1px;
   border-bottom: solid 1px;
-  border-color: rgb(57, 172, 233);
+  border-color: #2B5EC0;
 
 }
 .navbar-custom .nav li a {
@@ -73,7 +73,7 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 .navbar-custom .nav li.active a:hover {
-  color: white;
+  color: black;
 }
 
 .glyphicon-plus {
@@ -107,7 +107,7 @@
   }
 
   .nav-right-text p {
-    color: rgb(252, 97, 0);
+    color: #2B5EC0;
   }
 }
 
@@ -123,7 +123,7 @@
   }
 
   .navbar-custom .nav li a:hover {
-    color: white;
+    color: black;
     outline: none;
     background-color: transparent;
   }
