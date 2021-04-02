@@ -3,7 +3,7 @@ const temp_memeber_list_id = `78ad08cb3d`;
 
 module.exports = (object) => {
     const newMembers = {
-        members:
+        members: [
             {
                 email_address: `${object.maillistInfo.EmailAddress}`,
                 status: "subscribed",
@@ -12,6 +12,7 @@ module.exports = (object) => {
                     LNAME: `${object.maillistInfo.LastName}`            
                 }
             }
+        ]
     };
 
     const newJSON = JSON.stringify(newMembers);
