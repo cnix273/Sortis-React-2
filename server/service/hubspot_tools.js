@@ -1,4 +1,4 @@
-const api_key = "32583a2e-b128-4390-b87a-8e622366aa06";
+const api_key = process.env.SORTIS_API
 // const api_key = process.env.API_KEY;
 const crmSearch = `https://api.hubapi.com/crm/v3/objects/contacts/search?hapikey=${api_key}`
 
