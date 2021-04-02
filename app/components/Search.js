@@ -162,6 +162,7 @@ export default class Search extends Component {
                             )
                         })}
                         <Modal show={this.state.show} handleClose={this.hideModal}>
+                            <p></p>
                         </Modal>
                     </Grid>
                 </div>
