@@ -1702,8 +1702,7 @@ chokidar@^2.1.8:
     path-is-absolute "^1.0.0"
     readdirp "^2.2.1"
     upath "^1.1.1"
-  optionalDependencies:
-    fsevents "^1.2.7"
+
 
 chrome-trace-event@^1.0.2:
   version "1.0.2"
@@ -2439,13 +2438,6 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-fsevents@^1.2.7:
-  version "1.2.13"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.13.tgz#f325cb0455592428bcf11b383370ef70e3bfcc38"
-  integrity sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==
-  dependencies:
-    bindings "^1.5.0"
-    nan "^2.12.1"
 
 function-bind@^1.1.1:
   version "1.1.1"
