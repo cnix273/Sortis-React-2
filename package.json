@@ -2,7 +2,7 @@
   "name": "travelsecure-react",
   "version": "1.0",
   "homepage": "https://sleepy-springs-57038.herokuapp.com/",
-  "author": "Omar Patel",
+  "author": "Cameron Nix",
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"webpack --watch\" \"nodemon ./server/bin/www\"",
@@ -29,7 +29,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/OSP123/TravelSecure-Mongo.git"
+    "url": "https://github.com/cnix273/Sortis-React-2.git"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
