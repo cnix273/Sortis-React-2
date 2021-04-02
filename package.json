@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "node": "^14.15.0",
     "axios": "^0.21.1",
     "bcrypt-nodejs": "^0.0.3",
     "bootstrap": "^4.6.0",
