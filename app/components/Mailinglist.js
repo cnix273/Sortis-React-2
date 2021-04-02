@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Auth from './utils/Auth';
 import Nav from './children/Nav'
 import Investors from './Mailinglist'
+import Modal from './modal/modal.js';
 
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,7 +19,6 @@ require('./Search.css');
 
 
 export default class MailingList extends Component {
-    // classes = useStyles();
 
     constructor(props) {
 		super(props);
@@ -26,16 +26,20 @@ export default class MailingList extends Component {
 			EmailAddress: "",
             FirstName: "",
             LastName: "",
-			results: []
+			results: [],
+            show: false
 		};
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
 	}
 
     addtoMailchimp = (maillistInfo) => {
+        console.log("hello");
         axios.post("/apis/mailinglist/newinvestor", {
             maillistInfo
         }).then(data => {
             console.log("API send successful", data.data);
-            
+            this.showModal();
         }).catch(err => {
             console.log(err);
         })
@@ -51,7 +55,6 @@ export default class MailingList extends Component {
         }
     
         this.addtoMailchimp(maillistInfo);
-
     }
 
     handleInputChange = event => {
@@ -62,9 +65,15 @@ export default class MailingList extends Component {
         this.setState({
             [name]: value
         })
-    
     }
 
+    showModal = () => {
+        this.setState({ show: true });
+    };
+    
+    hideModal = () => {
+        this.setState({ show: false });
+    };
 
     render() {
         
@@ -126,59 +135,9 @@ export default class MailingList extends Component {
                                 </form>
                             </Paper>
                         </Grid>
-                        {/* <Investors/> */}
-                        {/* {this.state.results.map((contact) => {
-                            return(
-                                <Grid item xs={4}>
-                                    <Paper>
-                                        <Card variant="outlined">
-                                            <table className="table">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="head">
-                                                            Name<br></br>
-                                                            Email<br></br>
-                                                            Title<br></br>
-                                                            Address<br></br>
-                                                            City:<br></br>
-                                                            State<br></br>
-                                                            Zip Code<br></br>
-                                                            Number<br></br>
-                                                            Open to Call?<br></br>
-                                                            Open to Email?<br></br>
-                                                            Is Active?<br></br>
-                                                            Is Accredited?<br></br>
-                                                            Is Investor?<br></br>
-                                                            Avg Investment<br></br>
-                                                            Contact Type<br></br>
-                                                            Is Registered?
-                                                        </td>
-                                                        <td>
-                                                            {contact.firstname} {contact.lastname}<br></br>
-                                                            {contact.email}<br></br>
-                                                            {contact.jobtitle}<br></br>
-                                                            {contact.address}<br></br>
-                                                            {contact.city}<br></br>
-                                                            {contact.state}<br></br>
-                                                            {contact.zip}<br></br>
-                                                            {contact.phone}<br></br>
-                                                            {contact.cs_do_not_call}<br></br>
-                                                            {contact.cs_do_not_email}<br></br>
-                                                            {contact.cs_is_active}<br></br>
-                                                            {contact.cs_is_accredited}<br></br>
-                                                            {contact.cs_is_investor}<br></br>
-                                                            {contact.cs_average_investment_amount}<br></br>
-                                                            {contact.contact_type}<br></br>
-                                                            {contact.cs_is_registered}
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </Card>
-                                    </Paper>
-                                </Grid>
-                            )
-                        })} */}
+                        <Modal show={this.state.show} handleClose={this.hideModal}>
+                            <p>Congrats {this.state.FirstName} {this.state.LastName}! Your contact information has been added!</p>
+                        </Modal>
                     </Grid>
                 </div>
             </section>

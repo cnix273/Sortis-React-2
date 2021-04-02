@@ -4,26 +4,28 @@ import { Redirect } from 'react-router-dom';
 import Auth from './utils/Auth';
 import Nav from './children/Nav'
 import Investors from './Mailinglist'
+import Modal from './modal/modal.js';
 
 import Card from '@material-ui/core/Card';
-import { makeStyles } from '@material-ui/core/styles';
-import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+// import Modal from 'react-modal';
 
 
 require('./Search.css');
 
 
 export default class Search extends Component {
-    // classes = useStyles();
 
     constructor(props) {
 		super(props);
 		this.state = {
 			searchName: "",
-			results: []
+			results: [],
+            show: false
 		};
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
 	}
 
     hubspotCall = (searchParam) => {
@@ -31,10 +33,16 @@ export default class Search extends Component {
             searchName: searchParam,
         }).then(data => {
             console.log("API send successful", data.data);
+            if(data.data == []){
+                console.log("hello");
+                this.showModal();
+            };
             this.setState({
                 results: data.data
             });
-            
+            if(data.data.length === 0){
+                this.showModal();
+            };
         }).catch(err => {
             console.log(err);
         })
@@ -42,7 +50,6 @@ export default class Search extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        
         const searchParam = this.state.searchName;
     
         this.hubspotCall(searchParam);
@@ -57,9 +64,15 @@ export default class Search extends Component {
         this.setState({
             [name]: value
         })
-    
     }
 
+    showModal = () => {
+        this.setState({ show: true });
+    };
+    
+    hideModal = () => {
+        this.setState({ show: false });
+    };
 
     render() {
         
@@ -96,7 +109,6 @@ export default class Search extends Component {
                                 </form>
                             </Paper>
                         </Grid>
-                        {/* <Investors/> */}
                         {this.state.results.map((contact) => {
                             return(
                                 <Grid item xs={4}>
@@ -149,6 +161,9 @@ export default class Search extends Component {
                                 </Grid>
                             )
                         })}
+                        <Modal show={this.state.show} handleClose={this.hideModal}>
+                            <p>Modal kjnad</p>
+                        </Modal>
                     </Grid>
                 </div>
             </section>
