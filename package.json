@@ -16,12 +16,12 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
     "font-awesome": "^4.7.0",
     "nodemon": "^1.19.1",
-    "style-loader": "^1.0.0",
-    "url-loader": "^2.1.0"
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1"
   },
   "plugins": [
     "transform-class-properties"
@@ -41,7 +41,7 @@
     "express-session": "^1.16.2",
     "jquery": "^3.5.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.5",
+    "mongoose": "^5.12.3",
     "morgan": "^1.9.1",
     "node": "^14.14.37",
     "passport": "^0.4.0",
