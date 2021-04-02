@@ -27,8 +27,15 @@ module.exports = {
           plugins: ["@babel/plugin-proposal-class-properties"]
         }
       },
-      {test: /\.css$/, loaders: ['style-loader', 'css-loader']},
-      {test: /\.(png|jpg|jpeg)$/, loader: 'url-loader'}
+      {test: /\.css$/, 
+        use : [
+          {loader: 'style-loader'},
+          {loader: 'css-loader'}
+        ]},
+      {test: /\.(png|jpg|jpeg)$/, 
+        use : [
+          {loader: 'url-loader'}
+      ]}
     ]
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
