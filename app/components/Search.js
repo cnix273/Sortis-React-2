@@ -40,8 +40,7 @@ export default class Search extends Component {
             this.setState({
                 results: data.data
             });
-            if(data.data == []){
-                console.log("hello");
+            if(data.data.length === 0){
                 this.showModal();
             };
         }).catch(err => {
@@ -163,7 +162,6 @@ export default class Search extends Component {
                             )
                         })}
                         <Modal show={this.state.show} handleClose={this.hideModal}>
-                            <p>Modal</p>
                         </Modal>
                     </Grid>
                 </div>
