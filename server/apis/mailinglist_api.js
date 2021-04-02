@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 const buildNewMember = require('../service/mailchimp_tools');
 
@@ -10,9 +9,12 @@ exports.sendNewMember = (req, res) => {
   .then((response) => {
     console.log(response.data);
 
-    console.log(`Sucessfully added to Mailchimp Mailing Lust`, response.data, `  congrats!`)
+    console.log(`Sucessfully added to Mailchimp Mailing List`, response.data, `  congrats!`)
+
+    res.status(200).send(response.data);
   })
   .catch((error) => {
     console.log(error);
+    res.status(400).end();
   })
 }

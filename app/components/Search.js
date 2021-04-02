@@ -162,7 +162,7 @@ export default class Search extends Component {
                             )
                         })}
                         <Modal show={this.state.show} handleClose={this.hideModal}>
-                            <p>Modal kjnad</p>
+                            <p>No Investor Found!</p>
                         </Modal>
                     </Grid>
                 </div>
