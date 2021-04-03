@@ -1,3 +1,15 @@
+p {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	}
+	label {
+		color: #2B5EC0;
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	}
+	
+	.checkbox {
+		background-color: #2B5EC0 !important;
+	}
+	
 body {
 	color: white;
 }
