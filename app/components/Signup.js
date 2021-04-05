@@ -256,11 +256,13 @@ render() {
 								</div>
 
 								<div className="col-sm-6">
-									<input type="checkbox" className="checkbox" />Sigh up for our newsletter
+									<input type="checkbox" className="checkbox" />
+									<label>Sign up for our newsletter</label>
 								</div>
 
 								<div className="col-sm-6">
-									<input type="checkbox" className="checkbox" />Send notifications to this email
+									<input type="checkbox" className="checkbox" />
+									<label>Send notifications to this email</label>
 								</div>
 
 							</div>
