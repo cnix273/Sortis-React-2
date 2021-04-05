@@ -4,6 +4,7 @@
 // load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var uri = process.env.MONGODB_URI 
 
 // define the schema for our user model
 
@@ -17,7 +18,7 @@ mongoose.connect(uri, {
     console.log(Error, err.message);
   })
 
-  
+
 var userSchema = mongoose.Schema({
 
     username: {
