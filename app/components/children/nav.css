@@ -12,11 +12,17 @@
   text-align: center;
 }
 
+#nav-heading {
+  position: fixed!important;
+  top: 20px;
+  left: 20px;
+}
+
 .navbar-custom {
   margin-bottom: 0;
   border-bottom: 5px solid rgba(255, 255, 255, 0.3);
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: black;
+  background-color: white;
 }
 
 .navbar-custom .navbar-toggle {
@@ -26,7 +32,8 @@
   float: left;
   margin-left: 15px;
   background: none;
-  margin-top: 21px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .navbar-custom .navbar-toggle-right {
@@ -35,6 +42,7 @@
 
 .fa-bars {
   font-size: 2.3em;
+  color: #2B5EC0;
 }
 .navbar-custom .navbar-toggle:focus,
 .navbar-custom .navbar-toggle:active {
@@ -74,6 +82,10 @@
 }
 .navbar-custom .nav li.active a:hover {
   color: black;
+}
+
+.glyphicon {
+  color: #2B5EC0;
 }
 
 .glyphicon-plus {
