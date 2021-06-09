@@ -20,18 +20,18 @@ export default class Nav extends Component {
                 <a href="#page-top"></a>
               </li>
               <li>
-                <Link to={"/search"} ><div className="page-scroll nav-left-text"><p>SEARCH</p></div></Link>
+                <Link to={"/search"}><div className="page-scroll nav-left-text"><p>SEARCH</p></div></Link>
               </li>
               <li>
-                <Link to={"/mailinglist"} ><div className="page-scroll nav-left-text"><p>MAILING-LIST</p></div></Link>
+                <Link to={"/mailinglist"}><div className="page-scroll nav-left-text"><p>MAILING-LIST</p></div></Link>
               </li>
               {this.props.authenticated ? (
                 <li>
-                  <a href="#" onClick={this.props.logout} ><div className="page-scroll nav-left-text" data-toggle="modal"><p>LOGOUT</p></div></a>
+                  <a href="#" onClick={this.props.logout}><div className="page-scroll nav-left-text" data-toggle="modal"><p>LOGOUT</p></div></a>
                 </li>
               ) : (
                 <li>
-                  <Link to={"/login"} ><div className="page-scroll nav-left-text" data-toggle="modal"><p>LOGIN</p></div></Link>
+                  <Link to={"/login"}><div className="page-scroll nav-left-text" data-toggle="modal"><p>LOGIN</p></div></Link>
                 </li>
               )}
             </ul>
