@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Auth from './utils/Auth';
 import Nav from './children/Nav'
-import Investors from './Mailinglist'
 import Modal from './modal/modal.js';
 
 import Card from '@material-ui/core/Card';
@@ -84,13 +83,13 @@ export default class Search extends Component {
             deAuthenticate={this.props.deAuthenticate}
             logout={this.props.logout}
             />  
-            <section id="plans">
+            <section id="search-content">
                 <div>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
-                            <Paper>
+                            <Paper className="searchcontainer">
                                 <form>
-                                    <div className="form-group">
+                                    <div className="form-group searchhead">
                                         <h3>Search for Investor</h3>
                                         <label htmlFor="search">Criteria</label>
                                         <input
@@ -102,6 +101,7 @@ export default class Search extends Component {
                                             placeholder="Name.."
                                             id="search-input">
                                         </input>
+                                        <br></br>
                                         <button type="submit" onClick={this.handleSubmit} className="btn btn-success">
                                             Search
                                         </button>
@@ -109,15 +109,17 @@ export default class Search extends Component {
                                 </form>
                             </Paper>
                         </Grid>
+                    </Grid>
+                    <Grid container spacing={4}>
                         {this.state.results.map((contact) => {
                             return(
-                                <Grid item xs={4}>
+                                <Grid item xs={12} md={6} lg={4} className="grid-card">
                                     <Paper className="paper">
                                         <Card variant="outlined" className="cards">
                                             <table className="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td class="head">
+                                                        <td className="head">
                                                             Name<br></br>
                                                             Email<br></br>
                                                             Title<br></br>
@@ -161,10 +163,10 @@ export default class Search extends Component {
                                 </Grid>
                             )
                         })}
-                        <Modal show={this.state.show} handleClose={this.hideModal}>
-                            <p>No Investor Found!</p>
-                        </Modal>
                     </Grid>
+                    <Modal show={this.state.show} handleClose={this.hideModal}>
+                        <p>No Investor Found!</p>
+                    </Modal>
                 </div>
             </section>
         </div>
