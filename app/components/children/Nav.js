@@ -8,10 +8,8 @@ export default class Nav extends Component {
     return (
       <nav className="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div className="container nav-container">
+          <a href="/"><h1 id="nav-heading">Sortis.</h1></a>
           <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-              <i className="fa fa-bars"></i>
-            </button>
             <button type="button" className="navbar-toggle navbar-toggle-right" data-toggle="collapse" data-target=".navbar-main-collapse1">
               <i className="glyphicon glyphicon-plus"></i>
             </button>
@@ -21,7 +19,6 @@ export default class Nav extends Component {
               <li className="hidden">
                 <a href="#page-top"></a>
               </li>
-
               <li>
                 <Link to={"/search"} ><div className="page-scroll nav-left-text"><p>SEARCH</p></div></Link>
               </li>
