@@ -1,0 +1,42 @@
+#maillist-content {
+    margin: 20px;
+    padding-top: 10%;
+}
+
+.form-group {
+  margin: 30px;
+  border: 1px solid rgba(250, 250, 250, 0.5)
+}
+
+.mailinghead {
+  margin-top: 30px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.fa-bars {
+  color: #2B5EC0;
+}
+
+.MuiPaper-rounded.mailcontainer{
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px #2B5EC0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #2B5EC0;
+  font-size: 24px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
