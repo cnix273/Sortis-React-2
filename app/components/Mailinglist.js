@@ -18,18 +18,22 @@ export default class MailingList extends Component {
             FirstName: "",
             LastName: "",
 			results: [],
-            show: false
+            show: false,
+            modalMessage: ""
 		};
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
 	}
 
-    addtoMailchimp = (maillistInfo) => {
-        console.log("hello");
+    addtoMailchimp = (maillistInfo, authenticated) => {
         axios.post("/apis/mailinglist/newinvestor", {
-            maillistInfo
+            maillistInfo,
+            isAuth: authenticated
         }).then(data => {
             console.log("API send successful", data.data);
+            this.setState({
+                modalMessage: `Congrats ${this.state.FirstName} ${this.state.LastName}! Your contact information has been added!`
+            });
             this.showModal();
         }).catch(err => {
             console.log(err);
@@ -44,8 +48,17 @@ export default class MailingList extends Component {
             FirstName: this.state.FirstName,
             LastName: this.state.LastName
         }
+
+        const authenticated = this.props.authenticated;
+
+        if(!authenticated) {
+            this.setState({
+                modalMessage: "Sorry, you must be logged in to add people to the mailing list!"
+            });
+            this.showModal();
+        }
     
-        this.addtoMailchimp(maillistInfo);
+        this.addtoMailchimp(maillistInfo, authenticated);
     }
 
     handleInputChange = event => {
@@ -127,7 +140,7 @@ export default class MailingList extends Component {
                             </Paper>
                         </Grid>
                         <Modal show={this.state.show} handleClose={this.hideModal}>
-                            <p id="modal-text">Congrats {this.state.FirstName} {this.state.LastName}! Your contact information has been added!</p>
+                            <p id="modal-text">{this.state.modalMessage}</p>
                         </Modal>
                     </Grid>
                 </div>

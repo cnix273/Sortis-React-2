@@ -220,7 +220,7 @@ render() {
 				<section className="container">
 					<div className="container-page">
 						<form onSubmit={this.handleSubmit.bind(this)}>
-							<div className="col-md-6" id="registration-container">
+							<div className="col-sm-12 col-md-6" id="registration-container">
 								<h3 className="heading">Registration</h3>
 
 								<div id="username-form" ref="usernameForm" className="form-group col-lg-12 registration-form">
@@ -265,7 +265,7 @@ render() {
 
 							</div>
 
-							<div className="col-md-6" id="termsandconditions-container">
+							<div className="col-sm-12 col-md-6" id="termsandconditions-container">
 								<h3 className="heading">Terms and Conditions</h3>
 								<p className="termsandconditions-text">
 									By clicking on "Register" you agree to The Company's' Terms and Conditions

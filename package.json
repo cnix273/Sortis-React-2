@@ -5,9 +5,9 @@
   "author": "Cameron Nix",
   "license": "MIT",
   "scripts": {
-    "dev": "react-dotenv && concurrently \"webpack --watch\" \"nodemon ./server/bin/www\"",
-    "start": "react-dotenv && node ./server/bin/www",
-    "build": "react-dotenv && webpack"
+    "dev": "concurrently \"webpack --watch\" \"nodemon ./server/bin/www\"",
+    "start": "node ./server/bin/www",
+    "build": "webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

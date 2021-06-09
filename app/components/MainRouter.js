@@ -73,7 +73,7 @@ export default class MainRouter extends Component {
               logout={this.logout}
             />} 
           />
-          <Route path="/search" render={props => 
+          <Route eaxct path="/search" render={props => 
             <Search
               {...props}
               authenticate={this.authenticate}

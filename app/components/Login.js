@@ -61,11 +61,11 @@ export default class Login extends Component {
       username: usernameInput,
       password: passwordInput
     }
-
+    
     if (!objSubmit.username || !objSubmit.password) {
       return;
     }
-    // If we have an email and password we run the loginUser function and clear the form
+    // If we have a username and password we run the loginUser function and clear the form
     this.loginUser(objSubmit);
   }
 
