@@ -2,13 +2,15 @@
 
 ## Description
 
-This is a full stack web application that serves as a CRM Search Engine for Sortis.
+This is a refactor of a full-stack CRM search application using React.
 
-Sortis is a real estate investment firm. This functions as an internal application for Sortis through which employees can view investor information or add interested parties to their mailing list. Employees can search for investors by name or email. Investor information is retrieved from CrowdStreet, Sortis' CRM, using an API call to HubSpot which connects with the CrowdStreet database. The investor profiles that pertain to the search parameters are returned and displayed on the CRM search page.
+This functions as an internal application for Sortis, a real estate investment firm, through which employees can view investor information or add interested parties to their mailing list.
+
+Employees can search for investors by name and email. Investor information is retrieved from CrowdStreet, Sortis' CRM, using an API call to HubSpot which connects with the CrowdStreet database. The investor profiles that pertain to the search parameters are returned and displayed on the CRM search page.
 
 The mailing list is populated using an API call to MailChimp. The user is prompted to provide the name and email of the new contact which is then pushed to MailChimp uing an API post request.
 
-Employees must create an account with a username, email, and password which are encrypted. They then must log in to access the CRM Search and new mailing contact functionality. In order to log in, the user must enter ther log in information which must be validated. Once logged in, their session persists until the browser is closed.
+Employees must create an account with a username, email, and password which are encrypted. They then must log in to access the CRM search and new mailing contact functionality. In order to log in, the user must enter ther log in information which must be validated. Once logged in, their session persists until the browser is closed.
 
 ## Installation
 
@@ -20,17 +22,18 @@ Employees must create an account with a username, email, and password which are 
 
 **Technologies Used**
 * ReactJS - JavaScript library for building user interfaces and UI components
-* JavaScript - Takes in input from the user and adds functionality to the application.
-* JQuery - JavaScript library to simplify HTML DOM traversal.
-* CSS - Adds styling to the application
+* JavaScript - Makes the application dynamic so that input can be received from the user.
 * Node.js - JavaScript runtime environment that executes JavaScript code outside a web browser.
 * Express - Node.js framework.
-* Axios - 3rd party API call to get requested information
+* JSX - HTML-like syntax used by React.
+* Material-UI - React UI framework.
+* CSS - Adds styling to the application.
 * MongoDB - Databse Management System.
+* Mongoose - MongoDB object modeling for Node.js.
 * GitHub - Hosts the repository.
 * Heroku - Hosts the application.
 
-You must manually create the databse in MySQL based on the database information provided in the config.json file. Change the "Password" parameter of the development object to your MySQL password to connect to your database.
+**Live Application:** https://sortis-react-2.herokuapp.com/
 
 **Contributors:**
 * Cameron Nix
