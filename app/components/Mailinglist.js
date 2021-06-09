@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 
-require('./Search.css');
+require('./Mailinglist.css');
 
 
 export default class MailingList extends Component {
@@ -76,14 +76,14 @@ export default class MailingList extends Component {
             deAuthenticate={this.props.deAuthenticate}
             logout={this.props.logout}
             />  
-            <section id="plans">
+            <section id="maillist-content">
                 <div>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
-                            <Paper>
+                            <Paper className="mailcontainer">
                                 <form>
                                     <div className="form-group mailinghead">
-                                        <h3>Sign up for Mailing List</h3>
+                                        <h3>Sign Up for Mailing List</h3>
                                         <input
                                             onChange={this.handleInputChange}
                                             value={this.state.EmailAddress}
@@ -127,7 +127,7 @@ export default class MailingList extends Component {
                             </Paper>
                         </Grid>
                         <Modal show={this.state.show} handleClose={this.hideModal}>
-                            <p>Congrats {this.state.FirstName} {this.state.LastName}! Your contact information has been added!</p>
+                            <p id="modal-text">Congrats {this.state.FirstName} {this.state.LastName}! Your contact information has been added!</p>
                         </Modal>
                     </Grid>
                 </div>
