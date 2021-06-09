@@ -5,10 +5,10 @@ exports.sendNewMember = (req, res) => {
 
   const mailConstructor = buildNewMember(req.body);
 
+  console.log(mailConstructor);
+
   axios(mailConstructor)
   .then((response) => {
-    console.log(response.data);
-
     console.log(`Sucessfully added to Mailchimp Mailing List`, response.data, `  congrats!`)
 
     res.status(200).send(response.data);

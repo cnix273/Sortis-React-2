@@ -4,19 +4,19 @@
 // load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var uri = process.env.MONGODB_URI 
+// var uri = process.env.MONGODB_URI 
 
 // define the schema for our user model
 
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-  }).then(res=>{
-          console.log("DB Connected!")
-  }).catch(err => {
-    console.log(Error, err.message);
-  })
+// mongoose.connect(uri, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true
+//   }).then(res=>{
+//           console.log("DB Connected!")
+//   }).catch(err => {
+//     console.log(Error, err.message);
+//   })
 
 var userSchema = mongoose.Schema({
 

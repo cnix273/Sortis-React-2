@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import Auth from './utils/Auth';
 import Nav from './children/Nav'
 import Modal from './modal/modal.js';
 
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-// import Modal from 'react-modal';
-
 
 require('./Search.css');
 
@@ -21,25 +18,27 @@ export default class Search extends Component {
 		this.state = {
 			searchName: "",
 			results: [],
-            show: false
+            show: false,
+            modalMessage: ""
 		};
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
 	}
 
-    hubspotCall = (searchParam) => {
+    hubspotCall = (searchParam, authenticated) => {
         axios.post("/apis/contacts/search", {
             searchName: searchParam,
+            isAuth: authenticated
         }).then(data => {
+            console.log(data);
             console.log("API send successful", data.data);
-            if(data.data == []){
-                console.log("hello");
-                this.showModal();
-            };
             this.setState({
                 results: data.data
             });
             if(data.data.length === 0){
+                this.setState({
+                    modalMessage: "No Investor Found!"
+                });
                 this.showModal();
             };
         }).catch(err => {
@@ -50,9 +49,17 @@ export default class Search extends Component {
     handleSubmit = event => {
         event.preventDefault();
         const searchParam = this.state.searchName;
-    
-        this.hubspotCall(searchParam);
+        const authenticated = this.props.authenticated;
 
+        if(!authenticated) {
+            console.log("not authenticated")
+            this.setState({
+                modalMessage: "Sorry, you must be logged in to perform a search!"
+            });
+            this.showModal();
+        }
+
+        this.hubspotCall(searchParam, authenticated);
     }
 
     handleInputChange = event => {
@@ -78,10 +85,10 @@ export default class Search extends Component {
     return (
         <div>
             <Nav
-            authenticated={this.props.authenticated}
-            authenticate={this.props.authenticate}
-            deAuthenticate={this.props.deAuthenticate}
-            logout={this.props.logout}
+                authenticated={this.props.authenticated}
+                authenticate={this.props.authenticate}
+                deAuthenticate={this.props.deAuthenticate}
+                logout={this.props.logout}
             />  
             <section id="search-content">
                 <div>
@@ -165,7 +172,7 @@ export default class Search extends Component {
                         })}
                     </Grid>
                     <Modal show={this.state.show} handleClose={this.hideModal}>
-                        <p>No Investor Found!</p>
+                        <p>{this.state.modalMessage}</p>
                     </Modal>
                 </div>
             </section>
