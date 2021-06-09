@@ -33,7 +33,7 @@ Employees must create an account with a username, email, and password which are 
 * GitHub - Hosts the repository.
 * Heroku - Hosts the application.
 
-**Live Application:** https://sortis-react-2.herokuapp.com/
+**Live Application:** https://sortis-react-crm.herokuapp.com/
 
 **Contributors:**
 * Cameron Nix
