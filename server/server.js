@@ -14,6 +14,7 @@ const compression    = require('compression');
 
 // instantiate our app
 const app            = express();
+const uri            = process.env.MONGODB_URI;
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {  
