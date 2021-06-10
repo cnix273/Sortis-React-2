@@ -2,23 +2,24 @@
 
 // app/models/user.js
 // load the things we need
-var mongoose = require('mongoose');
-var bcrypt   = require('bcrypt-nodejs');
-// var uri = process.env.MONGODB_URI 
+const mongoose = require('mongoose');
+const bcrypt   = require('bcrypt-nodejs');
+// const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://cnix273:Greenwich2936@cluster0.w6qbd.mongodb.net/Sortis?retryWrites=true&w=majority";
 
 // define the schema for our user model
 
-// mongoose.connect(uri, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useUnifiedTopology: true
-//   }).then(res=>{
-//           console.log("DB Connected!")
-//   }).catch(err => {
-//     console.log(Error, err.message);
-//   })
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+}).then(res=>{
+    console.log("DB Connected!")
+}).catch(err => {
+    console.log(Error, err.message);
+})
 
-var userSchema = mongoose.Schema({
+var userSchema = new mongoose.Schema({
 
     username: {
         type: String,
