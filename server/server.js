@@ -14,6 +14,7 @@ const compression    = require('compression');
 
 // instantiate our app
 const app            = express();
+const connectionString = "mongodb+srv://cnix273:Greenwich2936@cluster0.w6qbd.mongodb.net/Sortis?retryWrites=true&w=majority"
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {  

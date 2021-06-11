@@ -36,7 +36,7 @@ export default class Signup extends Component {
 		if (usernameVal.length < 6) {
 			usernameForm.classList.remove("has-success");
 			usernameForm.classList.add("has-error");
-			usernameFeedback.textContent = "username must be at least 6 characters long";
+			usernameFeedback.textContent = "Username must be at least 6 characters long.";
 		} else {
 			usernameForm.classList.remove("has-error");
 
@@ -83,12 +83,12 @@ handlePasswordRepeat = event => {
 		repeatPasswordForm.classList.remove("has-success");
 
 		repeatPasswordForm.classList.add("has-error");
-		repeatPasswordFeedback.textContent = "Passwords Don't Match";
+		repeatPasswordFeedback.textContent = "Passwords don't match.";
 	} else {
 		repeatPasswordForm.classList.remove("has-error");
 
 		repeatPasswordForm.classList.add("has-success");
-		repeatPasswordFeedback.textContent = "Passwords Match!";
+		repeatPasswordFeedback.textContent = "Passwords match!";
 	}
 }
 
@@ -108,40 +108,41 @@ handleEmailValidation = event => {
 		emailForm.classList.remove("has-success");
 
 		emailForm.classList.add("has-error");
-		emailFeedback.textContent = "Invalid Email";
+		emailFeedback.textContent = "Invalid email.";
 		emailAdditionalFeedback.textContent = "Ex: someone@example.com";
 
 	} else {
 		emailForm.classList.remove("has-error");
 
 		emailForm.classList.add("has-success");
-		emailFeedback.textContent = "Valid Email!";
+		emailFeedback.textContent = "Valid email!";
 		emailAdditionalFeedback.textContent = "";
 	}
 }
 
 handleEmailRepeat = event => {
 
-	const emailVal = this.refs.emailRepeat.value;
+	const emailVal = this.refs.email.value;
+	const emailRepeat = this.refs.emailRepeat.value;
 	const emailForm = this.refs.emailRepeatForm;
 	const emailFeedback = this.refs.emailRepeatFeedback;
 	const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 	this.setState({
-		'emailRepeat': emailVal
+		'emailRepeat': emailRepeat
 	});
 
-	if (!emailRegEx.test(emailVal)) {
+	if (emailVal != emailRepeat) {
 		emailForm.classList.remove("has-success");
 
 		emailForm.classList.add("has-error");
-		emailFeedback.textContent = "Emails Don't Match";
+		emailFeedback.textContent = "Emails don't match.";
 
 	} else {
 		emailForm.classList.remove("has-error");
 
 		emailForm.classList.add("has-success");
-		emailFeedback.textContent = "Emails Match!";
+		emailFeedback.textContent = "Emails match!";
 	}
 }
 
@@ -154,7 +155,7 @@ signUpUser = userData => {
 		console.log("data stuff", data.data);
 		if (data.duplicateUser) {
 			// Replace with Modal
-			alert("Sorry, that username has been taken");
+			alert("Sorry, that username has been taken.");
 		} else if (data.data.success) {
 			console.log("yay!")
 			this.props.authenticate();
@@ -181,7 +182,7 @@ handleSubmit = event => {
 	};
 
 	if (!userData.username || !userData.email || !userData.password) {
-		return alert("Please don't leave fields blank");
+		return alert("Please don't leave fields blank.");
 	}
 
 	// If we have an email and password, run the signUpUser function
@@ -244,9 +245,8 @@ render() {
 								<div id="email-form" className="form-group col-lg-12 registration-form" ref="emailForm">
 									<label>Email Address</label>
 									<input type="email" name="" ref="email" className="form-control" id="email-input" value={this.state.email} onChange={this.handleEmailValidation} />
-
-									<p id="email-feedback" className="" ref="emailFeedback"></p>
-									<small id="email-additional-feedback" ref="emailAdditionalFeedback" className="form-text text-muted"></small>
+									<small id="email-feedback" ref="emailFeedback" className=""></small>
+									<small id="email-feedback" ref="emailFeedback" className=""></small>
 								</div>
 
 								<div id="email-repeat-form" className="form-group col-lg-12 registration-form" ref="emailRepeatForm">
