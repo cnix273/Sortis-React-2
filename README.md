@@ -30,8 +30,9 @@ Employees must create an account with a username, email, and password which are 
 * CSS - Adds styling to the application.
 * MongoDB - Databse Management System.
 * Mongoose - MongoDB object modeling for Node.js.
+* MongoDB Atlas - Cloud database service for deploying MongoDB databases.
 * GitHub - Hosts the repository.
-* Heroku - Hosts the application.
+* Heroku - Hosts the deployed application.
 
 **Live Application:** https://sortis-react-crm.herokuapp.com/
 
