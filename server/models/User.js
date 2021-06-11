@@ -4,8 +4,8 @@
 // load the things we need
 const mongoose = require('mongoose');
 const bcrypt   = require('bcrypt-nodejs');
-// const uri = process.env.MONGODB_URI;
-const uri = "mongodb+srv://cnix273:Greenwich2936@cluster0.w6qbd.mongodb.net/Sortis?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
+// const uri = "mongodb+srv://cnix273:Greenwich2936@cluster0.w6qbd.mongodb.net/Sortis?retryWrites=true&w=majority";
 
 // define the schema for our user model
 
