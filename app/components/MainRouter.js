@@ -36,7 +36,7 @@ export default class MainRouter extends Component {
     axios.get('/apis/users/logout')
       .then(function (data) {
         this.deAuthenticate();
-        window.location.reload();
+        window.location.href = "/";
       }.bind(this)).catch(function (err) {
         console.log(err);
       });
