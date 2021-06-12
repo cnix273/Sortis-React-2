@@ -1,7 +1,5 @@
-// const temp_api_key = process.env.MAILCHIMP_API;
-const temp_api_key = "f2a9600c439761deb43f19e55822a542-us6";
-// const temp_memeber_list_id = process.env.MAILCHIMP_LIST_ID;
-const temp_memeber_list_id = "ae2110ebd2"
+const temp_api_key = process.env.MAILCHIMP_API;
+const temp_memeber_list_id = process.env.MAILCHIMP_AUDIENCE_ID;
 
 module.exports = (object) => {
     const newMembers = {

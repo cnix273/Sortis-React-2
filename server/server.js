@@ -8,13 +8,13 @@ const passport 			 = require("./config/passport");
 const session        = require('express-session'); 
 const config				 = require("./config/extra-config");
 const compression    = require('compression');
+const dotenv         = require('dotenv').config()
 
 // Express settings
 // ================
 
 // instantiate our app
 const app            = express();
-const connectionString = "mongodb+srv://cnix273:Greenwich2936@cluster0.w6qbd.mongodb.net/Sortis?retryWrites=true&w=majority"
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {  
