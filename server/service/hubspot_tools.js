@@ -1,10 +1,8 @@
-const api_key = "32583a2e-b128-4390-b87a-8e622366aa06"
-// const api_key = process.env.API_KEY;
+const api_key = process.env.HUBSPOT_API;
 const crmSearch = `https://api.hubapi.com/crm/v3/objects/contacts/search?hapikey=${api_key}`
 
 exports.objBuild = (searchInput, nextPage) => {
     console.log(searchInput);
-    console.log(process.env.REACT_APP_SORTIS_API)
     let objSetup = {
         method: 'POST',
         url: crmSearch,
