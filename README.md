@@ -16,7 +16,7 @@ Employees must create an account with a username, email, and password which are 
 
 1. Clone the repository from github to your local server: "git clone https://github.com/cnix273/Sortis-React-2.git".
 2. Install node packages: "yarn install"
-5. Run the application the terminal: "yarn dev"
+5. Run the application in the terminal: "yarn dev"
 
 ## Usage
 
