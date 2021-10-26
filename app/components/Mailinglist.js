@@ -127,12 +127,11 @@ export default class MailingList extends Component {
                                             id="lastname">
                                         </input>
                                         <br></br>
-                                        <button 
-                                        //  disabled={!(formObject.email && formObject.firstname && formObject.lastname)}
-                                        type="submit" 
-                                        onClick={this.handleSubmit} 
-                                        className="btn btn-success">
-                                            Sign-up for Mailchip mailing Lit
+                                        <button
+                                            type="submit" 
+                                            onClick={this.handleSubmit} 
+                                            className="btn">
+                                                Sign-up for Mailchip mailing Lit
                                         </button>
                                         
                                     </div>
