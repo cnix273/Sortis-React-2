@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Nav from './children/Nav'
 import { Link } from 'react-router-dom';
 
-require('./Main.css');
+require('./main.css');
 
 // Here we include all of the sub-components
 // var Form = require("./children/Form");
