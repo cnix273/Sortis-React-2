@@ -1,7 +1,5 @@
 const User                = require('../models/User');
 const passport            = require("passport");
-const connectionString    = "mongodb+srv://cnix273:Greenwich2936@cluster0.w6qbd.mongodb.net/Sortis?retryWrites=true&w=majority"
-
 
 exports.signOutUser = function(req, res) {
   req.logout();
