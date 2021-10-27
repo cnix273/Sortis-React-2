@@ -62,22 +62,21 @@
   border-top: solid 1px;
   border-bottom: solid 1px;
   border-color: #2B5EC0;
-
 }
-.navbar-custom .nav li a {
+.navbar-custom .nav li {
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 }
-.navbar-custom .nav li a:focus,
-.navbar-custom .nav li a:active {
+.navbar-custom .nav li:focus,
+.navbar-custom .nav li:active {
   outline: none;
-  background-color: transparent;
+  background-color: white;
 }
 .navbar-custom .nav li.active {
   outline: none;
 }
-.navbar-custom .nav li.active a {
+.navbar-custom .nav li.active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .navbar-custom .nav li.active a:hover {
@@ -112,10 +111,10 @@
     margin: 0 -15px;
   }
 
-  .navbar-custom .nav li a:hover {
+  .navbar-custom .nav li:hover {
     color: rgba(0, 0, 0, 0.8);
     outline: none;
-    background-color: transparent;
+    background-color: white;
   }
 
   .nav-right-text p {
@@ -134,12 +133,6 @@
     margin: 0 auto;
   }
 
-  .navbar-custom .nav li a:hover {
-    color: black;
-    outline: none;
-    background-color: transparent;
-  }
-
   .nav-right-text p, .nav-left-text p {
     font-size: 12px;
   }
@@ -151,7 +144,7 @@
     padding: 20px 0;
     border-bottom: none;
     letter-spacing: 1px;
-    background: transparent;
+    background: white;
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
