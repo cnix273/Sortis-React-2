@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Nav from './children/Nav'
 import { Link } from 'react-router-dom';
 
-require('./main.css');
+require('./Main.css');
 
 // Here we include all of the sub-components
 // var Form = require("./children/Form");
@@ -40,7 +40,11 @@ export default class Main extends Component {
         <section id="about" className="container content-section text-center">
             <div className="row">
                 <div className="col-lg-8 col-lg-offset-2">
-                    <Link to={"/login"} ><h2>LOG IN TO BEGIN</h2></Link>
+                  {this.props.authenticated ? (
+                    <h2>YOU ARE CURRENTLY LOGGED IN</h2>
+                  ) : (
+                    <Link to={"/login"}><h2>LOG IN TO BEGIN</h2></Link>
+                  )}
                 </div>
             </div>
         </section>
