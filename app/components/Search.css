@@ -1,7 +1,7 @@
-  #search-content {
-    margin: 20px;
-    padding-top: 10%;
-  }
+#search-content {
+  margin: 20px;
+  padding-top: 10%;
+}
 
 .form-group {
   margin: 30px;
@@ -16,6 +16,10 @@
 h3 {
   padding: 10px;
   margin-top: 20px;
+}
+
+td {
+  font-family:"Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .btn {
@@ -45,8 +49,8 @@ h3 {
 
 .head {
   border-right: 1px solid lightgray;
-  width: 118px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 130px;
+  text-align: right;
 }
 
 p {

@@ -98,7 +98,6 @@ export default class Search extends Component {
                                 <form>
                                     <div className="form-group searchhead">
                                         <h3>Search for Investor</h3>
-                                        <label htmlFor="search">Criteria</label>
                                         <input
                                             onChange={this.handleInputChange}
                                             value={this.state.searchName}
@@ -109,7 +108,7 @@ export default class Search extends Component {
                                             id="search-input">
                                         </input>
                                         <br></br>
-                                        <button type="submit" onClick={this.handleSubmit} className="btn btn-success">
+                                        <button type="submit" onClick={this.handleSubmit} className="btn">
                                             Search
                                         </button>
                                     </div>
@@ -131,7 +130,7 @@ export default class Search extends Component {
                                                             Email<br></br>
                                                             Title<br></br>
                                                             Address<br></br>
-                                                            City:<br></br>
+                                                            City<br></br>
                                                             State<br></br>
                                                             Zip Code<br></br>
                                                             Number<br></br>
