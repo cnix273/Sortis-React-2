@@ -32,7 +32,7 @@ export default class MailingList extends Component {
         }).then(data => {
             console.log("API send successful", data.data);
             this.setState({
-                modalMessage: `Congrats ${this.state.FirstName} ${this.state.LastName}! Your contact information has been added!`
+                modalMessage: `The contact information for ${this.state.FirstName} ${this.state.LastName} has been successfully added!`
             });
             this.showModal();
         }).catch(err => {
