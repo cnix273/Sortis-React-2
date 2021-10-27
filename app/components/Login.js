@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Nav from './children/Nav'
 
-require('./Login.css');
+require('./login.css');
 
 export default class Login extends Component {
 
