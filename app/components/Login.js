@@ -87,12 +87,12 @@ export default class Login extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        <div className="login-modal-container">
+        <div className="loginmodal-container">
           <h1 className="">Log In to Your Account</h1><br />
           <form className="login" onSubmit={this.handleSubmit}>
             <input id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
             <input id="password-input" ref="password" type="password" name="pass" placeholder="Password" onChange={this.handlePasswordChange} value={this.state.password} />
-            <input type="submit" name="login" className="login login-modal-submit" value="LOGIN" />
+            <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
           </form>
           <div className="login-help">
             <Link to={"/signup"}> Register </Link>
